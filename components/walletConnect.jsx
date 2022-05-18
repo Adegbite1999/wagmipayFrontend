@@ -7,6 +7,7 @@ import WalletModal from "./modal";
 import { useWeb3React } from '@web3-react/core'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import { WalletLinkConnector } from '@web3-react/walletlink-connector'
+import Connected from "./connected";
 
 
 
@@ -54,7 +55,7 @@ function WalletConnect() {
           className="text-white bg-[#23A6F0] text-white rounded-lg px-6 "
         >
           Connect wallet
-        </button> : <p>Welcome</p> }
+        </button> : <Connected/> }
      
         {show && (
           <WalletModal onClose={walletHandler}>
