@@ -1,6 +1,0 @@
-export * from './Metamask'
-export * from './TrustWallet'
-export * from './WalletConnect'
-export * from './MathWallet'
-export * from './SafePal'
-export * from './NotFoundSVG'
