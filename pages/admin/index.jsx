@@ -6,7 +6,7 @@ function Admin() {
       <section className=' py-6 px-6'>
       <div className='flex justify-between'>
         <h2 className='text-white font-bold text-2xl font-montserat'>Welcome</h2>
-        <h2 className='text-white font-medium font-montserat'>Web3Bridge</h2>
+        <h2 className='text-white font-medium font-montserat'>Web3Bridge................</h2>
       </div>
 
       <div className='flex justify-center'>
