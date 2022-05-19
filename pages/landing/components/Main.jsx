@@ -10,25 +10,24 @@ function Main() {
 
 
   const whitelistAddresses = [
-    
-       "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 2000000000000000000",
-       "0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 2000000000000000000",
-       "0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db 2000000000000000000",
-       "0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB 2000000000000000000"
-    
-  ];
-  console.log(merkle)
+  {
+    address:"0x5B38Da6a701c568545dCfcB03FcB875f56beddC4",
+    amount :"2000000000000000000",
+  },
 
+  {
+    address:"0x617F2E2fD72FD9D5503197092aC168c91465E7f2",
+    amount:"2000000000000000000"}
+]
+
+  console.log(merkle);
   const merkleGeneratorHandler = () => {
-    const leaves = whitelistAddresses.map(addr => Keccak256(addr));
+    const leaves = Object.keys( whitelistAddresses).map(addr => Keccak256(addr));
     const tree = new MerkleTree(leaves, Keccak256, {  sortLeaves: true,sortPairs: true});
     const buf2Hex = x => '0x' + x.toString('hex')
     const root = buf2Hex(tree.getRoot());
-    const leaf = buf2Hex(Keccak256(whitelistAddresses[3]))
-    const proof = tree.getProof(leaf).map(x => buf2Hex(x.data))
-    console.log(proof);
-    console.log(tree.verify(proof, leaf, root))
-    // const result = "0x"+ rootHash.toString('hex')
+    // const leaf = buf2Hex(Keccak256(whitelistAddresses[3]))
+    // const proof = tree.getProof(leaf).map(x => buf2Hex(x.data))
     setMerkle(root)
   };
   return (

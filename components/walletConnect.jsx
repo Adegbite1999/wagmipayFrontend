@@ -1,14 +1,9 @@
 import React, { useState,useEffect } from "react";
 import { header } from "../static/data";
 import WalletModal from "./modal";
-
-
-
+import { connector } from "../web3/walletConnect";
 import { useWeb3React } from '@web3-react/core'
-import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
-import { WalletLinkConnector } from '@web3-react/walletlink-connector'
 import Connected from "./connected";
-
 
 
 
@@ -20,22 +15,22 @@ function WalletConnect() {
     setShow(!show);
   };
 
-
-  const  walletConnect = new WalletConnectConnector({supportedChainIds: [1,3, 4, 5, 42, ],})
-  const  coinbaseConnect = new WalletLinkConnector({supportedChainIds: [1, 3, 4, 5, 42 ],})
-
-  const { chainId, account, activate, active,library } = useWeb3React()
-  console.log(account)
-  console.log(active);
-
+  const {account, activate, active,} = useWeb3React()
+console.log(active)
   
   const WalletConnect = () => {
-    activate(walletConnect)
+    activate(connector.walletconnect)
   }
 
   const CoinBaseConnect = () => {
-    activate(coinbaseConnect)
+    // console.log(2345);
+    activate(connector.coinbase)
   }
+
+  useEffect(() => {
+    console.log("account: ", account);
+  }, [account])
+  
 
   return (
     <div className="bg-white h-12 flex justify-evenly p-4">
