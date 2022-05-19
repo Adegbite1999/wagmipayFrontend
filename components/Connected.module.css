@@ -2,7 +2,7 @@
 .root {
     display: flex;
     width: 10rem;
-    justify-content: space-between;
+    justify-content: center;
     font-size: 1.2rem;
     margin-right: 2rem;
     font-weight: 500;
