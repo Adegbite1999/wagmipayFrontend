@@ -9,27 +9,16 @@ function Main() {
   const [merkle, setMerkle] = useState([]);
 
 
-  const whitelistAddresses = [
-  {
-    address:"0x5B38Da6a701c568545dCfcB03FcB875f56beddC4",
-    amount :"2000000000000000000",
-  },
-
-  {
-    address:"0x617F2E2fD72FD9D5503197092aC168c91465E7f2",
-    amount:"2000000000000000000"}
-]
-
-  console.log(merkle);
-  const merkleGeneratorHandler = () => {
-    const leaves = Object.keys( whitelistAddresses).map(addr => Keccak256(addr));
-    const tree = new MerkleTree(leaves, Keccak256, {  sortLeaves: true,sortPairs: true});
-    const buf2Hex = x => '0x' + x.toString('hex')
-    const root = buf2Hex(tree.getRoot());
-    // const leaf = buf2Hex(Keccak256(whitelistAddresses[3]))
-    // const proof = tree.getProof(leaf).map(x => buf2Hex(x.data))
-    setMerkle(root)
-  };
+  // console.log(merkle);
+  // const merkleGeneratorHandler = () => {
+  //   const leaves = Object.keys( whitelistAddresses).map(addr => Keccak256(addr));
+  //   const tree = new MerkleTree(leaves, Keccak256, {  sortLeaves: true,sortPairs: true});
+  //   const buf2Hex = x => '0x' + x.toString('hex')
+  //   const root = buf2Hex(tree.getRoot());
+  //   // const leaf = buf2Hex(Keccak256(whitelistAddresses[3]))
+  //   // const proof = tree.getProof(leaf).map(x => buf2Hex(x.data))
+  //   setMerkle(root)
+  // };
   return (
     <main>
       <section className="grid grid-cols-2 items-center">
@@ -37,7 +26,7 @@ function Main() {
           <h2 className="text-white font-montserrat font-bold text-4xl leading-2	">
             Your On- Demand Payroll Streaming Service Protocol
           </h2>
-          <button onClick={merkleGeneratorHandler}>Generate merkle</button>
+          {/* <button onClick={merkleGeneratorHandler}>Generate merkle</button> */}
           <p className="text-white font-montserrat font-medium">
             Reduce the hassles associated with workers payment to have more time
             to do what to your love.

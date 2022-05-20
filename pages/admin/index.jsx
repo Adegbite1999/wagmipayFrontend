@@ -1,5 +1,7 @@
+import { useWeb3React } from '@web3-react/core'
 import React from 'react'
 import LayOut from "../../layout/LayOut"
+import useMerkleFactory from '../../web3/hooks/useMerkleFactory'
 function Admin() {
   return (
     <LayOut>
@@ -15,7 +17,7 @@ function Admin() {
 
       <div className='flex justify-end'>
         <div>
-          <button className='text-white border-2 pl-2 pr-2  mr-4 text-white rounded-lg'>Add Employee</button>
+          <button  className='text-white border-2 pl-2 pr-2  mr-4 text-white rounded-lg'>Add Employee</button>
           <button className='text-white bg-[#23A6F0] pr-2 pl-2  text-white rounded-lg'>Approve Payment</button>
         </div>
       </div>

@@ -13,16 +13,18 @@ const useMerkleFactory = () =>{
     let provider = useRef()
     let merkleFactory = useRef()
 
+
     useEffect(() =>{
         if(active){
             signer.current = library.getSigner()
         }else{
-            provider.current = new ethers.providers.JsonRpcProvider(getRpcUrl())
+            provider.current = new ethers.providers.JsonRpcProvider(80001)
         }
         merkleFactory.current = getMerkleContract(
         merkleFactoryAddress, signer.current || provider.current
         )
     })
+    console.log(merkleFactory.current)
 
     const createOrg = useCallback( async() =>{
         if(!active)throw new Error("you are not connected")
