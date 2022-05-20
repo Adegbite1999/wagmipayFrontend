@@ -3,7 +3,7 @@ import { ethers, utils } from "ethers";
 import { useCallback, useEffect, useRef } from "react";
 import { merkleFactoryAddress } from "../constants";
 import {getMerkleContract} from '../contractFactory';
-import { getRpcUrl, getChainID } from "../helper";
+
 
 
 

@@ -5,7 +5,8 @@ import { connector } from "../web3/walletConnect";
 import { useWeb3React } from '@web3-react/core'
 import Connected from "./connected";
 import { useEagerConnect } from "../web3/walletHook";
-
+import {getConnectionError} from "../web3/helper"
+import {useToasts} from "react-toast-notifications"
 
 
 
@@ -17,23 +18,41 @@ function WalletConnect() {
   };
 useEagerConnect()
   const {account, activate, active,} = useWeb3React()
+  const {addToast} = useToasts()
+
   
-  const WalletConnect = () => {
-    activate(connector.walletconnect)
-  }
+  const handleError = (err) => {
+    const errorString = getConnectionError(err);
+    addToast(errorString, { appearance: "error" });
+}
+
+
+
+
+  useEffect(() => {
+    if (active) {
+        addToast("Wallet connected", {
+            appearance: "success",
+        });
+
+    }
+    // eslint-disable-next-line
+}, [active]);
 
   const CoinBaseConnect = () => {
     // console.log(2345);
-    activate(connector.coinbase)
+    activate(connector.coinbase,handleError)
   }
 
   const metamaskConnect = () => {
     // console.log(2345);
-    activate(connector.metamask)
+    activate(connector.metamask,handleError)
   }
-  useEffect(() => {
-    console.log("account: ", account);
-  }, [account])
+
+  const WalletConnect = () => {
+    activate(connector.walletconnect,handleError)
+  }
+
   
 
   return (

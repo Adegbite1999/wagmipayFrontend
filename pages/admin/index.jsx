@@ -1,10 +1,17 @@
 import { useWeb3React } from '@web3-react/core'
 import React from 'react'
 import LayOut from "../../layout/LayOut"
-import useMerkleFactory from '../../web3/hooks/useMerkleFactory'
+import SideBar from '../../components/sideBar'
+import styles from "./admin.module.css"
+// import useMerkleFactory from '../../web3/hooks/useMerkleFactory'
 function Admin() {
+  // const{createOrg} = useMerkleFactory()
+
   return (
     <LayOut>
+         <section className='flex'>
+      <SideBar/>
+      <main className={styles.main}>
       <section className=' py-6 px-6'>
       <div className='flex justify-between'>
         <h2 className='text-white font-bold text-2xl font-montserat'>Welcome</h2>
@@ -47,6 +54,8 @@ function Admin() {
     </tr>
   </tbody>
 </table>
+      </section>
+      </main>
       </section>
     </LayOut>
   )
