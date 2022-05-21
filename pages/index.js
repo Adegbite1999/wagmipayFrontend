@@ -13,4 +13,13 @@ export default function Home() {
     <Landing/>
     </div>
   )
+
+
+  /*
+  
+  1. convert csv file to json
+  2.generate merkle root
+  3.start integration
+  
+  */
 }

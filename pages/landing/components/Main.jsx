@@ -9,28 +9,16 @@ function Main() {
   const [merkle, setMerkle] = useState([]);
 
 
-  const whitelistAddresses = [
-    
-       "0x5B38Da6a701c568545dCfcB03FcB875f56beddC4 2000000000000000000",
-       "0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2 2000000000000000000",
-       "0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db 2000000000000000000",
-       "0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB 2000000000000000000"
-    
-  ];
-  console.log(merkle)
-
-  const merkleGeneratorHandler = () => {
-    const leaves = whitelistAddresses.map(addr => Keccak256(addr));
-    const tree = new MerkleTree(leaves, Keccak256, {  sortLeaves: true,sortPairs: true});
-    const buf2Hex = x => '0x' + x.toString('hex')
-    const root = buf2Hex(tree.getRoot());
-    const leaf = buf2Hex(Keccak256(whitelistAddresses[3]))
-    const proof = tree.getProof(leaf).map(x => buf2Hex(x.data))
-    console.log(proof);
-    console.log(tree.verify(proof, leaf, root))
-    // const result = "0x"+ rootHash.toString('hex')
-    setMerkle(root)
-  };
+  // console.log(merkle);
+  // const merkleGeneratorHandler = () => {
+  //   const leaves = Object.keys( whitelistAddresses).map(addr => Keccak256(addr));
+  //   const tree = new MerkleTree(leaves, Keccak256, {  sortLeaves: true,sortPairs: true});
+  //   const buf2Hex = x => '0x' + x.toString('hex')
+  //   const root = buf2Hex(tree.getRoot());
+  //   // const leaf = buf2Hex(Keccak256(whitelistAddresses[3]))
+  //   // const proof = tree.getProof(leaf).map(x => buf2Hex(x.data))
+  //   setMerkle(root)
+  // };
   return (
     <main>
       <section className="grid grid-cols-2 items-center">
@@ -38,7 +26,7 @@ function Main() {
           <h2 className="text-white font-montserrat font-bold text-4xl leading-2	">
             Your On- Demand Payroll Streaming Service Protocol
           </h2>
-          <button onClick={merkleGeneratorHandler}>Generate merkle</button>
+          {/* <button onClick={merkleGeneratorHandler}>Generate merkle</button> */}
           <p className="text-white font-montserrat font-medium">
             Reduce the hassles associated with workers payment to have more time
             to do what to your love.

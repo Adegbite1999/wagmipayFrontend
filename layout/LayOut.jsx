@@ -5,10 +5,10 @@ import styles from './layout.module.css'
 
 function LayOut({children}) {
   return (
-    <section className='flex'>
-      <SideBar/>
-      <main className={styles.main}>
+    <section>
+      {/* <SideBar/> */}
       <WalletConnect/>
+      <main>
       {children}
       </main>
       </section>

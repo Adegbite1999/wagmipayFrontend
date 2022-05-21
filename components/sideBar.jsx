@@ -10,7 +10,7 @@ function SideBar() {
       </div>
       {/* flex here */}
       <div>
-          <h4 className="text-white  capitalize mb-8">admin</h4>
+          {/* <h4 className="text-white  capitalize mb-8">admin</h4> */}
           <p className="flex mr-2 items-center mb-4 text-white">
             <span className="mr-2">
               <svg
@@ -58,7 +58,7 @@ function SideBar() {
         <div className="ml-4">
           <div className="flex items-center mb-4">
             <img src="/assets/aa.svg" alt="avatar" />
-            <span className="ml-4">0xA...EIW</span>
+            <span className="ml-4 text-white font-montserrat font-medium">0xA...EIW</span>
           </div>
           <div className="">
             <span className="flex">

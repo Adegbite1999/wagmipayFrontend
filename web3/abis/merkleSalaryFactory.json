@@ -1,0 +1,41 @@
+[
+    {
+        "anonymous": false,
+        "inputs": [
+            {
+                "indexed": true,
+                "internalType": "contract MerkleSalaryClaim",
+                "name": "newPayroll",
+                "type": "address"
+            }
+        ],
+        "name": "payrollCreated",
+        "type": "event"
+    },
+    {
+        "inputs": [],
+        "name": "allPayrolls",
+        "outputs": [
+            {
+                "internalType": "contract MerkleSalaryClaim[]",
+                "name": "coll",
+                "type": "address[]"
+            }
+        ],
+        "stateMutability": "view",
+        "type": "function"
+    },
+    {
+        "inputs": [],
+        "name": "createPayroll",
+        "outputs": [
+            {
+                "internalType": "contract MerkleSalaryClaim",
+                "name": "",
+                "type": "address"
+            }
+        ],
+        "stateMutability": "nonpayable",
+        "type": "function"
+    }
+]

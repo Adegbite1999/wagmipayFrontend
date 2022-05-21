@@ -10,7 +10,7 @@ function Header() {
 </svg>
         </div>
         <div>
-           <Link href="/admin"><button className='text-white bg-[#23A6F0] text-white rounded-lg px-6 py-2'>Launch App</button></Link>
+           <Link href="/register"><button className='text-white bg-[#23A6F0] text-white rounded-lg px-6 py-2'>Launch App</button></Link>
         </div>
         </header>
   )
