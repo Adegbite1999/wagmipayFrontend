@@ -28,7 +28,7 @@ export const company = [
 export const header = [
     {
         value:'home',
-        link:'#'
+        link:'/'
     },
     {
     value:'product',
