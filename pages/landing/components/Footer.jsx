@@ -77,7 +77,7 @@ function Footer() {
         <h3 className="text-white font-montserrat font-semibold">Features</h3>
         {features.map((item, idx) => {
           return (
-            <li className="list-none text-white font-montserrat font-normal">
+            <li key={idx} className="list-none text-white font-montserrat font-normal">
               <a className="mb-2" href={item.link}>
                 {item.value}
               </a>
