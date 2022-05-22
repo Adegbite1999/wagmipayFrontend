@@ -1,8 +1,17 @@
 import React from "react";
 import LayOut from "../../layout/LayOut";
 import SideBar from "../../components/sideBar";
-import styles from "./employee.module.css"
+import styles from "./employee.module.css";
+import {useToasts} from "react-toast-notifications"
+
+
 function Employee() {
+  const {addToast} = useToasts()
+const handleSuccess = () =>{
+  return      addToast("successfully claimed", {
+    appearance: "success",
+});
+}
   return (
     <LayOut>
       <section className="flex">
@@ -29,7 +38,7 @@ function Employee() {
                 </h3>
               </div>
               <div>
-                <button className="text-white bg-[#23A6F0] px-12 py-2  text-white rounded-lg">
+                <button onClick={handleSuccess} className="text-white bg-[#23A6F0] px-12 py-2  text-white rounded-lg">
                   Claim
                 </button>
               </div>
@@ -54,13 +63,13 @@ function Employee() {
               <tbody>
                 <tr>
                   <td className="border-separate border border-slate-400">
-                    January
+                   May 
                   </td>
                   <td className="border-separate border border-slate-400">
-                    Done
+                    pending
                   </td>
                   <td className="border-separate border border-slate-400">
-                    Jan 27,2022
+               May 22,2022
                   </td>
                   <td className="border-separate border border-slate-400">
                     $500.22
@@ -68,13 +77,14 @@ function Employee() {
                 </tr>
                 <tr>
                   <td className="border-separate border border-slate-400">
-                    0x99384......789
+                    {/* 0x99384......789 */}
+                    June
                   </td>
                   <td className="border-separate border border-slate-400">
                     pending
                   </td>
                   <td className="border-separate border border-slate-400">
-                    Jan 27,2022
+                  June 22,2022
                   </td>
                   <td className="border-separate border border-slate-400">
                     $500.22
