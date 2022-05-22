@@ -32,12 +32,14 @@ function Main() {
             to do what to your love.
           </p>
           <div className="mt-4">
+          <Link href="/employee">
             <button className="bg-[#23A6F0] text-white rounded-full px-6 py-2 mr-4">
-              Get started
+              claim as an employee
             </button>
-            <Link href="#">
+            </Link>
+            <Link href="/register">
               <button className="rounded-full text-white px-6 py-2 border-2">
-                Launch App
+                create payroll as a business
               </button>
             </Link>
           </div>

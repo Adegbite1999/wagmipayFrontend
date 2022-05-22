@@ -1,12 +1,16 @@
 import { useWeb3React } from '@web3-react/core'
-import React from 'react'
+import React,{useState} from 'react'
 import LayOut from "../../layout/LayOut"
 import SideBar from '../../components/sideBar'
 import styles from "./admin.module.css"
+import InputModal from '../../components/inputModal'
 // import useMerkleFactory from '../../web3/hooks/useMerkleFactory'
 function Admin() {
   // const{createOrg} = useMerkleFactory()
-
+const [show, setShow] =  useState(false)
+const showHandler = () =>{
+  setShow(!show)
+}
   return (
     <LayOut>
          <section className='flex'>
@@ -24,8 +28,20 @@ function Admin() {
 
       <div className='flex justify-end'>
         <div>
-          <button  className='text-white border-2 pl-2 pr-2  mr-4 text-white rounded-lg'>Add Employee</button>
+          <button  onClick={showHandler}  className='text-white border-2 pl-2 pr-2  mr-4 text-white rounded-lg'>Add Employee</button>
           <button className='text-white bg-[#23A6F0] pr-2 pl-2  text-white rounded-lg'>Approve Payment</button>
+          {show &&           <InputModal>
+          <div className='w-full flex justify-center translate-y-48'>
+            <div>
+              <input
+              type="file"
+              classname="w-full"
+              />
+            </div>
+            <button className='text-white bg-[#23A6F0] pr-2 pl-2 rounded-lg' onClick={showHandler}>Update Employee Payroll</button>
+          </div>
+          </InputModal> }
+
         </div>
       </div>
       <table className="table-auto w-full text-center text-white mt-6 border-separate border border-slate-400">

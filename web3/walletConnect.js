@@ -4,7 +4,7 @@ import { WalletLinkConnector } from '@web3-react/walletlink-connector'
 import { InjectedConnector } from "@web3-react/injected-connector";
 export const pollingInterval = 12000;
 
-const  walletConnect = new WalletConnectConnector({supportedChainIds: [80001 ],
+const  walletConnect = new WalletConnectConnector({supportedChainIds: [3 ],
     qrcode: true,
     pollingInterval: pollingInterval,
 })

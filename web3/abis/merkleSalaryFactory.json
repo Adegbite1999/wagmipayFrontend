@@ -4,8 +4,14 @@
         "inputs": [
             {
                 "indexed": true,
-                "internalType": "contract MerkleSalaryClaim",
+                "internalType": "address",
                 "name": "newPayroll",
+                "type": "address"
+            },
+            {
+                "indexed": true,
+                "internalType": "address",
+                "name": "owner",
                 "type": "address"
             }
         ],
@@ -17,7 +23,7 @@
         "name": "allPayrolls",
         "outputs": [
             {
-                "internalType": "contract MerkleSalaryClaim[]",
+                "internalType": "address[]",
                 "name": "coll",
                 "type": "address[]"
             }
@@ -26,11 +32,22 @@
         "type": "function"
     },
     {
-        "inputs": [],
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "_name",
+                "type": "string"
+            }
+        ],
         "name": "createPayroll",
         "outputs": [
             {
-                "internalType": "contract MerkleSalaryClaim",
+                "internalType": "address",
+                "name": "",
+                "type": "address"
+            },
+            {
+                "internalType": "address",
                 "name": "",
                 "type": "address"
             }

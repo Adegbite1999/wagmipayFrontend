@@ -34,6 +34,7 @@ useEagerConnect()
         addToast("Wallet connected", {
             appearance: "success",
         });
+        // onClose();
 
     }
     // eslint-disable-next-line
@@ -60,7 +61,7 @@ useEagerConnect()
       <div className="flex">
         {header.map((item, idx) => {
           return (
-            <li key={idx} className="list-none mr-8">
+            <li key={idx} className="capitalize list-none mr-8">
               <a href={item.link}>{item.value}</a>
             </li>
           );
@@ -68,12 +69,15 @@ useEagerConnect()
       </div>
 
       <div>
-        {!active?    <button
+        {active? <Connected/> :
+        
+        <button
           onClick={walletHandler}
           className="text-white bg-[#23A6F0] text-white rounded-lg px-6 "
         >
           Connect wallet
-        </button> : <Connected/> }
+        </button>
+        }
      
         {show && (
           <WalletModal onClose={walletHandler}>
